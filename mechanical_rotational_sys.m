@@ -1,0 +1,11 @@
+function dXdt=mechanical_rotational_sys(t,X)
+Ta=100;
+J1=750; 
+J2=750; 
+B1=20; 
+B2=20; 
+K=15; 
+dXdt(1,1)=X(2);
+dXdt(2,1)=(-B1/J1)*X(2)+((B1/J1)*X(4))-((K/J1)*X(1))+(Ta/J1);
+dXdt(3,1)=X(4);
+dXdt(4,1)=((B1/J2)*X(2))-(((B1+B2)/J2)*X(4));
